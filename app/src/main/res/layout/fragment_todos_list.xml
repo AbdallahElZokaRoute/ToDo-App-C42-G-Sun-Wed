@@ -8,9 +8,23 @@
     <View
         android:id="@+id/toolbar_view"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="100dp"
         android:background="@color/blue"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.kizitonwose.calendar.view.WeekCalendarView
+        android:id="@+id/week_calendar_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal"
+        app:cv_daySize="seventhWidth"
+        app:cv_dayViewResource="@layout/item_week_day"
+        app:cv_weekHeaderResource="@layout/item_week_header"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/item_week_day" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/tasks_recycler_view"
@@ -19,6 +33,6 @@
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_view"
+        app:layout_constraintTop_toBottomOf="@id/week_calendar_view"
         tools:listitem="@layout/item_task" />
 </androidx.constraintlayout.widget.ConstraintLayout>

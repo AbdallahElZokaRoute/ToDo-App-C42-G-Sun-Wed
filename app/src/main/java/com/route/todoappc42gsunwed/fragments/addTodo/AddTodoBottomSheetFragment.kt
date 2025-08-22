@@ -14,10 +14,18 @@ import com.route.todoappc42gsunwed.R
 import com.route.todoappc42gsunwed.database.TasksDataBase
 import com.route.todoappc42gsunwed.database.model.TaskDM
 import com.route.todoappc42gsunwed.databinding.FragmentAddTodoBinding
+import com.route.todoappc42gsunwed.fragments.callback.OnTaskAddedListener
+import java.time.Instant
+import java.time.LocalDate
+import java.time.ZoneId
 import java.util.Calendar
 
-class AddTodoBottomSheetFragment : BottomSheetDialogFragment() {
+class AddTodoBottomSheetFragment(
+    // 2-
+    private var onTaskAddedListener: OnTaskAddedListener? = null
+) : BottomSheetDialogFragment() {
     private lateinit var binding: FragmentAddTodoBinding
+
     private lateinit var calendar: Calendar
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,10 +46,15 @@ class AddTodoBottomSheetFragment : BottomSheetDialogFragment() {
                         null,
                         title = binding.titleEditText.text?.toString() ?: "",
                         description = binding.descriptionEditText.text?.toString() ?: "",
-                        date = calendar.time
+                        date = LocalDate.ofInstant(
+                            Instant.ofEpochMilli(calendar.timeInMillis),
+                            ZoneId.systemDefault()
+                        )
 
                     )
                 )
+                //3-
+                onTaskAddedListener?.onTaskAdded()
                 dismiss()
             }
         }

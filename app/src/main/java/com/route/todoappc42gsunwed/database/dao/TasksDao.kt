@@ -6,7 +6,7 @@ import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 import com.route.todoappc42gsunwed.database.model.TaskDM
-import java.util.Date
+import java.time.LocalDate
 
 @Dao
 interface TasksDao {
@@ -23,5 +23,5 @@ interface TasksDao {
     fun getAllTasks(): List<TaskDM>
 
     @Query("SELECT * from tasks WHERE date = :date")
-    fun getTasksByDate(date: Date): List<TaskDM>
+    fun getTasksByDate(date: LocalDate): List<TaskDM>
 }

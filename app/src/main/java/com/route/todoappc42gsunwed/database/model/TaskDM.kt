@@ -2,7 +2,7 @@ package com.route.todoappc42gsunwed.database.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.util.Date
+import java.time.LocalDate
 
 @Entity(tableName = "Tasks")
 data class TaskDM(
@@ -10,7 +10,7 @@ data class TaskDM(
     val id: Int? = null,
     val title: String? = null,
     val description: String? = null,
-    val date: Date? = null,
+    val date: LocalDate? = null,
     val isDone: Boolean? = false,
 )
 

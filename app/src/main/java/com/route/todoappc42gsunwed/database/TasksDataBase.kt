@@ -10,7 +10,7 @@ import com.route.todoappc42gsunwed.database.model.TaskDM
 import com.route.todoappc42gsunwed.database.typeConverter.DateTypeConverter
 
 @TypeConverters(value = [DateTypeConverter::class])
-@Database(entities = [TaskDM::class], version = 1) // Schema
+@Database(entities = [TaskDM::class], version = 1, exportSchema = false)
 abstract class TasksDataBase : RoomDatabase() {
     abstract fun getTasksDao(): TasksDao
 
