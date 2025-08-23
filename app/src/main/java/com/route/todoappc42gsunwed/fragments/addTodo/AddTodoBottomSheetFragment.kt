@@ -16,9 +16,10 @@ import com.route.todoappc42gsunwed.database.model.TaskDM
 import com.route.todoappc42gsunwed.databinding.FragmentAddTodoBinding
 import java.util.Calendar
 
-class AddTodoBottomSheetFragment : BottomSheetDialogFragment() {
+class AddTodoBottomSheetFragment(private var listener: OnTaskAddedListener? = null): BottomSheetDialogFragment() {
     private lateinit var binding: FragmentAddTodoBinding
     private lateinit var calendar: Calendar
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -42,6 +43,7 @@ class AddTodoBottomSheetFragment : BottomSheetDialogFragment() {
 
                     )
                 )
+                listener?.onTaskAdded()
                 dismiss()
             }
         }

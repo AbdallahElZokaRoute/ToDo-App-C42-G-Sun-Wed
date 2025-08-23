@@ -1,16 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="28dp"
-    android:layout_marginVertical="14dp"
-    app:contentPadding="16dp">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    android:background="@color/transparent"
+    android:padding="10dp"
+    >
+    <com.zerobranch.layout.SwipeLayout
+        android:id="@+id/swipe_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        app:draggedItem="@id/drag_view"
+        app:leftItem="@id/left_view"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:swipeDirection="right">
+
+        <ImageView
+            android:id="@+id/left_view"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@drawable/delete_button_bg"
+            android:gravity="center"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:src="@drawable/ic_delete"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/drag_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:contentPadding="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
         <View
             android:id="@+id/vertical_view"
@@ -41,7 +68,6 @@
             android:layout_height="wrap_content"
             app:barrierDirection="start"
             app:constraint_referenced_ids="check_image_view, done_text_view"
-
             />
 
         <TextView
@@ -69,7 +95,6 @@
         <TextView
             android:id="@+id/done_text_view"
             android:layout_width="wrap_content"
-
             android:layout_height="wrap_content"
             android:textColor="@color/green"
             android:textSize="22sp"
@@ -79,5 +104,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@string/done" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</com.google.android.material.card.MaterialCardView>
+       </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    </com.zerobranch.layout.SwipeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

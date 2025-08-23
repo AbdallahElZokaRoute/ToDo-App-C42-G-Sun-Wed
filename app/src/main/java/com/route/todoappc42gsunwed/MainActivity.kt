@@ -8,11 +8,14 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.route.todoappc42gsunwed.databinding.ActivityMainBinding
 import com.route.todoappc42gsunwed.fragments.addTodo.AddTodoBottomSheetFragment
+import com.route.todoappc42gsunwed.fragments.addTodo.OnTaskAddedListener
 import com.route.todoappc42gsunwed.fragments.settings.SettingsFragment
 import com.route.todoappc42gsunwed.fragments.todosList.TodosListFragment
+import com.route.todoappc42gsunwed.fragments.todosList.adapter.TasksAdapter
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var todosListFragment: TodosListFragment
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -27,13 +30,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
+        todosListFragment = TodosListFragment()
         binding.fabMain.setOnClickListener {
-            val bottomSheetFragment = AddTodoBottomSheetFragment()
+            val bottomSheetFragment = AddTodoBottomSheetFragment(listener = object :
+                OnTaskAddedListener {
+                override fun onTaskAdded() {
+                    todosListFragment.getAllTasks()
+                }
+            })
             bottomSheetFragment.show(supportFragmentManager, "AddTodoBottomSheet")
         }
         binding.todoBottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
-                R.id.navigation_list -> showFragment(TodosListFragment())
+                R.id.navigation_list -> showFragment(todosListFragment)
                 R.id.navigation_settings -> showFragment(SettingsFragment())
             }
             return@setOnItemSelectedListener true

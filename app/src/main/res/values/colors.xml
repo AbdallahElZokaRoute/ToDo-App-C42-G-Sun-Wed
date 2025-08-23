@@ -8,6 +8,7 @@
     <color name="gray">#C8C9CB</color>
     <color name="gray2">#383838</color>
     <color name="gray3">#C3C3C3</color>
+    <color name="transparent">#00000000</color>
     <color name="gray4">#9CA9A9A9</color> <!-- RGBA   -->
     <!-- Red Green Blue Alpha-->
     <!-- Alpha RED GREEN BLUE -->

@@ -1,18 +1,22 @@
 package com.route.todoappc42gsunwed.database.model
 
+import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.parcelize.Parceler
+import kotlinx.parcelize.Parcelize
+import java.util.Calendar
 import java.util.Date
-
+@Parcelize
 @Entity(tableName = "Tasks")
 data class TaskDM(
     @PrimaryKey(autoGenerate = true)
     val id: Int? = null,
-    val title: String? = null,
-    val description: String? = null,
-    val date: Date? = null,
-    val isDone: Boolean? = false,
-)
+    var title: String? = null,
+    var description: String? = null,
+    var date: Date? = null,
+    var isDone: Boolean? = false,
+):Parcelable
 
 // CRUD (Create Read Update Delete)
 
