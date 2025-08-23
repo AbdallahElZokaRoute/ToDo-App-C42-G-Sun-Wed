@@ -48,6 +48,7 @@ dependencies {
     implementation(libs.androidx.activity)
     ksp(libs.androidx.room.compiler)
     implementation(libs.material)
+
     implementation (libs.zerobranch.swipelayout)
     implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)

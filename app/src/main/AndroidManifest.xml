@@ -15,9 +15,7 @@
         <activity
             android:name=".taskedit.EditTaskTodoActivity"
             android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".EditTaskTodoActivity"-->
-<!--            android:exported="false" />-->
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

@@ -15,7 +15,8 @@
         app:leftItem="@id/left_view"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:swipeDirection="right">
+        app:swipeDirection="right"
+        >
 
         <ImageView
             android:id="@+id/left_view"

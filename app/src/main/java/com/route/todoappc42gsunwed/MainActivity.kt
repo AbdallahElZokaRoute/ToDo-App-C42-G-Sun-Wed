@@ -50,3 +50,4 @@ class MainActivity : AppCompatActivity() {
         binding.todoBottomNavigationView.selectedItemId = R.id.navigation_list
     }
 }
+//
