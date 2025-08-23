@@ -3,7 +3,35 @@
     <style name="Base.Theme.ToDoAppC42GSunWed" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/blue</item>
     </style>
 
     <style name="Theme.ToDoAppC42GSunWed" parent="Base.Theme.ToDoAppC42GSunWed" />
+
+    <style name="ShapeAppearanceOverlay.Todo.Button.Rounded" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="LargeTitleTextStyle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MediumSubTitleTextStyle">
+        <item name="android:textColor">@color/gray2</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="LightDescriptionTextStyle">
+        <item name="android:textColor">@color/gray4</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="PrimaryTitleTextStyle">
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>
