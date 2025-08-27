@@ -19,6 +19,7 @@ import com.route.todoappc42gsunwed.database.model.TaskDM
 import com.route.todoappc42gsunwed.databinding.FragmentTodosListBinding
 import com.route.todoappc42gsunwed.databinding.ItemWeekDayBinding
 import com.route.todoappc42gsunwed.databinding.ItemWeekHeaderBinding
+import com.route.todoappc42gsunwed.fragments.callback.OnTaskClickListener
 import com.route.todoappc42gsunwed.fragments.todosList.adapter.TasksAdapter
 import com.route.todoappc42gsunwed.fragments.todosList.adapter.WeekDayHeaderViewHolder
 import com.route.todoappc42gsunwed.fragments.todosList.adapter.WeekDayViewHolder
@@ -45,7 +46,25 @@ class TodosListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adapter = TasksAdapter(listOf())
+        adapter = TasksAdapter(mutableListOf())
+        //  Github Library
+        adapter.onCheckClickListener = object : OnTaskClickListener {
+            override fun onTaskClick(
+                task: TaskDM,
+                position: Int
+            ) {
+                TasksDataBase.getInstance(requireContext()).getTasksDao()
+                    .updateTask(task.copy(isDone = true))
+                adapter.updateTaskState(position)
+
+            }
+        }
+        adapter.onDeleteClickListener = object : OnTaskClickListener {
+            override fun onTaskClick(task: TaskDM, position: Int) {
+                TasksDataBase.getInstance(requireContext()).getTasksDao().deleteTask(task)
+                adapter.deleteTaskState(position)
+            }
+        }
         getTasksByDate()
         binding.tasksRecyclerView.adapter = adapter
         initCalendarView()
@@ -142,6 +161,6 @@ class TodosListFragment : Fragment() {
                 task.date?.year == selectedDate?.year && task.date?.month == selectedDate?.month && task.date?.dayOfMonth == selectedDate?.dayOfMonth
             }
         }
-        adapter.setNewTasksList(tasks)
+        adapter.setNewTasksList(tasks.toMutableList())
     }
 }

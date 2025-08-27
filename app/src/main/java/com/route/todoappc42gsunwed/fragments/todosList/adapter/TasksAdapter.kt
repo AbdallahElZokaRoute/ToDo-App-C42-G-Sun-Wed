@@ -1,13 +1,23 @@
 package com.route.todoappc42gsunwed.fragments.todosList.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.route.todoappc42gsunwed.R
 import com.route.todoappc42gsunwed.databinding.ItemTaskBinding
 import com.route.todoappc42gsunwed.database.model.TaskDM
+import com.route.todoappc42gsunwed.fragments.callback.OnTaskClickListener
 
-class TasksAdapter(private var tasks: List<TaskDM>) :
+class TasksAdapter(private var tasks: MutableList<TaskDM>) :
     RecyclerView.Adapter<TasksAdapter.TaskViewHolder>() {
+    // 2-   Assignment -> Settings Fragment -> Edit Task Activity
+    //                  AppCompatDelegate
+    // Runtime Permissions <->  Google Maps  -> Jetpack Compose
+    var onTaskClickListener: OnTaskClickListener? = null
+    var onCheckClickListener: OnTaskClickListener? = null
+    var onDeleteClickListener: OnTaskClickListener? = null
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -18,7 +28,7 @@ class TasksAdapter(private var tasks: List<TaskDM>) :
         return TaskViewHolder(binding)
     }
 
-    fun setNewTasksList(tasks: List<TaskDM>) {
+    fun setNewTasksList(tasks: MutableList<TaskDM>) {
         this.tasks = tasks
         notifyDataSetChanged()
     }
@@ -29,17 +39,60 @@ class TasksAdapter(private var tasks: List<TaskDM>) :
     ) {
         val item = tasks.get(position)
         holder.bind(item)
+        //  3-
+        holder.binding.checkImageView.setOnClickListener {
+            onCheckClickListener?.onTaskClick(item, position)
+        }
+        holder.binding.root.setOnClickListener {
+            onTaskClickListener?.onTaskClick(item, position)
+        }
+        holder.binding.deleteImageView.setOnClickListener {
+            onDeleteClickListener?.onTaskClick(item, position)
+        }
     }
 
     override fun getItemCount(): Int {
         return tasks.size
     }
 
-    class TaskViewHolder(private val binding: ItemTaskBinding) :
+    fun updateTaskState(position: Int) {
+        val newTask = tasks.get(position).copy(isDone = true)
+        tasks.set(position, element = newTask)
+        notifyItemChanged(position)
+    }
+
+    fun deleteTaskState(position: Int) {
+        tasks.removeAt(position)
+        notifyItemRemoved(position)
+        notifyItemRangeChanged(position, itemCount)
+    }
+
+    class TaskViewHolder(val binding: ItemTaskBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: TaskDM) {
             binding.taskTitleTextView.text = item.title
             binding.timeTextView.text = item.date.toString()
+            if (item.isDone == true) {
+                val greenColor = ResourcesCompat.getColor(
+                    binding.root.resources,
+                    R.color.green,
+                    null
+                )
+                binding.verticalView.setBackgroundColor(greenColor)
+                binding.taskTitleTextView.setTextColor(greenColor)
+                binding.checkImageView.visibility = View.GONE
+                binding.doneTextView.visibility = View.VISIBLE
+            } else {
+                val blueColor = ResourcesCompat.getColor(
+                    binding.root.resources,
+                    R.color.blue,
+                    null
+                )
+                binding.verticalView.setBackgroundColor(blueColor)
+                binding.taskTitleTextView.setTextColor(blueColor)
+                binding.checkImageView.visibility = View.VISIBLE
+                binding.doneTextView.visibility = View.GONE
+            }
         }
 
     }
