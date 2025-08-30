@@ -24,6 +24,7 @@ class SettingsFragment : Fragment() {
     ): View {
         binding = FragmentSettingsBinding.inflate(inflater, container, false)
 
+
         val languages= arrayOf("English","Arabic")
         val modes= arrayOf("Light","Dark")
         val pref= requireContext().getSharedPreferences("settings", Context.MODE_PRIVATE)

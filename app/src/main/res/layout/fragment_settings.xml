@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     style="@style/DarkLightModeBackground"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <View
         android:id="@+id/todo_settings_fragment_container"
         android:layout_width="match_parent"
