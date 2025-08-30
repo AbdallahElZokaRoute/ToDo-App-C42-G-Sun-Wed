@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.route.todoappc42gsunwed.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="28dp"
+    android:layout_marginVertical="14dp"
+
+    android:background="@drawable/rounded_red_shape"
+    app:draggedItem="@id/task_card_view"
+    app:isEnabledSwipe="true"
+    app:leftItem="@id/delete_image_view"
+    app:swipeDirection="right">
+
+
+    <ImageView
+        android:id="@+id/delete_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="110dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_delete" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/task_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:contentPadding="16dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/vertical_view"
+                android:layout_width="4dp"
+                android:layout_height="80dp"
+                android:background="@color/blue"
+                app:layout_constraintEnd_toStartOf="@id/task_title_text_view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/task_title_text_view"
+                style="@style/PrimaryTitleTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="2dp"
+                app:layout_constraintBottom_toTopOf="@id/time_text_view"
+                app:layout_constraintEnd_toStartOf="@id/todos_barrier"
+                app:layout_constraintStart_toEndOf="@id/vertical_view"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="Play basket ball" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/todos_barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="start"
+                app:constraint_referenced_ids="check_image_view, done_text_view"
+
+                />
+
+            <TextView
+                android:id="@+id/time_text_view"
+                style="@style/MediumSubTitleTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/vertical_view"
+                app:layout_constraintTop_toBottomOf="@id/task_title_text_view"
+                tools:text="10:30PM" />
+
+            <ImageView
+                android:id="@+id/check_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_check"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/done_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/done"
+                android:textColor="@color/green"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</com.route.todoappc42gsunwed.SwipeLayout>
