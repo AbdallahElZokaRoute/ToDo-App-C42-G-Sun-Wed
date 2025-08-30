@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">تطبيق المهام C42 G Sun Wed</string>
+    <string name="list">القائمة</string>
+    <string name="settings">الإعدادات</string>
+    <string name="add_new_task">إضافة مهمة جديدة</string>
+    <string name="enter_task_title">ادخل عنوان المهمة...</string>
+    <string name="enter_task_desc">ادخل وصف المهمة...</string>
+    <string name="select_time">اختر الوقت</string>
+    <string name="please_select_task_time">من فضلك اختر وقت المهمة</string>
+    <string name="add">إضافة</string>
+    <string name="done">تم !</string>
+    <string name="title_required">العنوان مطلوب</string>
+    <string name="desc_required">الوصف مطلوب</string>
+    <string name="please_select_task_date">من فضلك ادخل تاريخ المهمة</string>
+    <string name="select_date">اختر التاريخ</string>
+    <string name="date_required">التاريخ مطلوب</string>
+    <string name="time_required">الوقت مطلوب</string>
+    <string name="settings_text">الإعدادات</string>
+    <string name="language">اللغة</string>
+    <string name="mode">الوضع</string>
+</resources>

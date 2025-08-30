@@ -15,4 +15,7 @@
     <string name="select_date">Select Date</string>
     <string name="date_required">Date Required.</string>
     <string name="time_required">Time Required.</string>
+    <string name="settings_text">Settings</string>
+    <string name="language">Language</string>
+    <string name="mode">Mode</string>
 </resources>
