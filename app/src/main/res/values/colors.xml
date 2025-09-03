@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
+    <color name="black">#060E1E</color>
+    <color name="black2">#141922</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="mint">#DFECDB</color>
+    <color name="blue">#5D9CEC</color>
+    <color name="light_blue">#805D9CEC</color>
+    <color name="green">#61E757</color>
+    <color name="gray">#C8C9CB</color>
+    <color name="gray2">#383838</color>
+    <color name="gray3">#C3C3C3</color>
+    <color name="gray4">#9CA9A9A9</color> <!-- RGBA   -->
+    <!-- Red Green Blue Alpha-->
+    <!-- Alpha RED GREEN BLUE -->
 </resources>
