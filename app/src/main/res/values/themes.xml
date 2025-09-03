@@ -5,6 +5,8 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="colorPrimary">@color/blue</item>
         <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/gray2</item>
         <item name="android:windowBackground">@color/mint</item>
     </style>
 
@@ -23,7 +25,7 @@
 
     <style name="LargeTitleTextStyle">
         <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:textStyle">bold</item>
     </style>
 
@@ -45,5 +47,25 @@
 
     <style name="DayViewBackGround">
         <item name="android:background">@drawable/rounded_white_bg</item>
+    </style>
+
+    <style name="Widget.App.ExposedDropdownMenu" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxStrokeColor">@color/blue</item>
+        <item name="endIconTint">@color/blue</item>
+        <item name="boxBackgroundColor">?colorSurface</item>
+        <item name="dropDownBackgroundTint">?colorSurface</item>
+        <item name="autoCompleteTextViewStyle">
+            @style/Widget.Material3.AutoCompleteTextView.OutlinedBox
+        </item>
+    </style>
+
+    <style name="Widget.App.AutoCompleteTextView.OutlinedBox" parent="Widget.Material3.AutoCompleteTextView.OutlinedBox">
+        <item name="dropDownBackgroundTint">?colorSurface</item>
+        <item name="simpleItemSelectedColor">@color/light_blue</item>
+    </style>
+
+    <style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">4dp</item>
     </style>
 </resources>

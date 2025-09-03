@@ -6,7 +6,8 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="1dp"
-    android:padding="8dp">
+    android:paddingHorizontal="4dp"
+    android:paddingVertical="8dp">
 
     <TextView
         android:id="@+id/week_day_name_text_view"
@@ -16,7 +17,6 @@
         app:layout_constraintBottom_toTopOf="@id/month_day_text_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Sun" />
 

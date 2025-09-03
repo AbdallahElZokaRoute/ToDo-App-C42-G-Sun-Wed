@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?android:windowBackground"
-    tools:context=".fragments.EditTaskFragment">
+    tools:context=".fragments.editTask.EditTaskFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:navigationIcon="@drawable/ic_back_arrow"
-            app:title="To Do List"
+            app:title="@string/to_do_list"
             app:titleTextAppearance="@style/ToolbarTextStyle" />
 
         <View

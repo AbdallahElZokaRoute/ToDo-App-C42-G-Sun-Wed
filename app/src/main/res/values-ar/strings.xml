@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">تطبيق المهام C42 G الأحد الأربعاء</string>
+    <string name="list">قائمة</string>
+    <string name="settings">الاعدادات</string>
+    <string name="add_new_task">اضافة مهمة جديدة</string>
+    <string name="enter_task_title">ادخل عنوان المهمة…</string>
+    <string name="enter_task_desc">ادخل تفاصيل المهمة…</string>
+    <string name="select_time">حدد الوقت</string>
+    <string name="please_select_task_time">برجاء تحديد وقت المهمة</string>
+    <string name="add">اضافة</string>
+    <string name="done">تم !</string>
+    <string name="title_required">العنوان مطلوب</string>
+    <string name="desc_required">التفاصيل مطلوبة</string>
+    <string name="please_select_task_date">برجاء ادخال تاريخ المهمة</string>
+    <string name="select_date">حدد التاريخ</string>
+    <string name="date_required">التاريخ مطلوب.</string>
+    <string name="time_required">الوقت مطلوب.</string>
+    <string name="edit_task">تعديل المهمة</string>
+    <string name="save_changes">حفظ التعديلات</string>
+    <string name="to_do_list">قائمة المهام</string>
+    <string name="mode">الوضع</string>
+    <string name="language">اللغة</string>
+    <array name="language_items">
+        <item>الإنجليزية</item>
+        <item>العربية</item>
+    </array>
+    <array name="mode_items">
+        <item>الفاتح</item>
+        <item>الداكن</item>
+    </array>
+</resources>
