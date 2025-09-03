@@ -1,65 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/frame_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/mint"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/blue" />
-
-    <FrameLayout
-        android:id="@+id/todo_fragment_container"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="64dp"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+        tools:context=".MainActivity">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_main"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/blue"
-        android:elevation="24dp"
-        android:src="@drawable/ic_add"
-        app:layout_anchor="@id/todo_bottom_app_bar"
-        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Todo.Button.Rounded"
-        app:tint="@color/white" />
-
-    <com.google.android.material.bottomappbar.BottomAppBar
-        android:id="@+id/todo_bottom_app_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:background="@color/white"
-        android:backgroundTint="@color/white"
-        app:backgroundTint="@color/white"
-        app:fabAlignmentMode="center"
-        app:fabAnchorMode="cradle"
-        app:fabCradleMargin="18dp"
-        app:fabCradleRoundedCornerRadius="0dp"
-        app:fabCradleVerticalOffset="4dp">
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/todo_bottom_navigation_view"
+        <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:elevation="8dp"
-            app:itemActiveIndicatorStyle="@null"
-            app:itemIconSize="32dp"
-            app:itemIconTint="@color/todo_bottom_nav_selector"
-            app:itemTextColor="@color/todo_bottom_nav_selector"
-            app:labelVisibilityMode="unlabeled"
-            app:menu="@menu/todo_bottom_navigation_menu" />
-    </com.google.android.material.bottomappbar.BottomAppBar>
-    <!--
-        menu
-        setOnItemSelectedListener
-     -->
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+            android:background="@color/blue" />
+
+        <FrameLayout
+            android:id="@+id/todo_fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="64dp"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue"
+            android:elevation="24dp"
+            android:src="@drawable/ic_add"
+            app:layout_anchor="@id/todo_bottom_app_bar"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Todo.Button.Rounded"
+            app:tint="@color/white" />
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/todo_bottom_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:fabAlignmentMode="center"
+            app:fabAnchorMode="cradle"
+            app:fabCradleMargin="18dp"
+            app:fabCradleRoundedCornerRadius="0dp"
+            app:fabCradleVerticalOffset="4dp">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/todo_bottom_navigation_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:elevation="8dp"
+                app:itemActiveIndicatorStyle="@null"
+                app:itemIconSize="32dp"
+                app:itemIconTint="@color/todo_bottom_nav_selector"
+                app:itemTextColor="@color/todo_bottom_nav_selector"
+                app:labelVisibilityMode="unlabeled"
+                app:menu="@menu/todo_bottom_navigation_menu" />
+        </com.google.android.material.bottomappbar.BottomAppBar>
+        <!--
+            menu
+            setOnItemSelectedListener
+         -->
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</FrameLayout>

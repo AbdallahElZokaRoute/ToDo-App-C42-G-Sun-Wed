@@ -1,14 +1,15 @@
 package com.route.todoappc42gsunwed
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
+import com.route.todoappc42gsunwed.database.TasksDataBase
+import com.route.todoappc42gsunwed.database.model.TaskDM
 import com.route.todoappc42gsunwed.databinding.ActivityMainBinding
+import com.route.todoappc42gsunwed.fragments.EditTaskFragment
 import com.route.todoappc42gsunwed.fragments.addTodo.AddTodoBottomSheetFragment
 import com.route.todoappc42gsunwed.fragments.callback.OnTaskAddedListener
+import com.route.todoappc42gsunwed.fragments.callback.OnTaskClickListener
 import com.route.todoappc42gsunwed.fragments.settings.SettingsFragment
 import com.route.todoappc42gsunwed.fragments.todosList.TodosListFragment
 
@@ -20,6 +21,28 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initViews()
+
+        todosListFragment.onTaskClickListener = object : OnTaskClickListener {
+            override fun onTaskClick(
+                task: TaskDM,
+                position: Int
+            ) {
+                val editTaskFragment = EditTaskFragment(task) {
+                    TasksDataBase
+                        .getInstance(this@MainActivity)
+                        .getTasksDao()
+                        .updateTask(it)
+                    supportFragmentManager.popBackStack()
+                    todosListFragment.getTasksByDate()
+                }
+
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(binding.root.id, editTaskFragment)
+                    .addToBackStack(null)
+                    .commit()
+            }
+        }
     }
 
     // Callbacks -> Recycler View

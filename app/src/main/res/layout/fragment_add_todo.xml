@@ -5,7 +5,7 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/add_new_task_text"
+        android:id="@+id/edit_task_text"
         style="@style/LargeTitleTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="38dp"
         android:hint="@string/enter_task_title"
-        app:layout_constraintTop_toBottomOf="@id/add_new_task_text" />
+        app:layout_constraintTop_toBottomOf="@id/edit_task_text" />
 
     <EditText
         android:id="@+id/description_edit_text"

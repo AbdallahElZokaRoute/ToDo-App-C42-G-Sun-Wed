@@ -43,7 +43,7 @@ class TasksAdapter(private var tasks: MutableList<TaskDM>) :
         holder.binding.checkImageView.setOnClickListener {
             onCheckClickListener?.onTaskClick(item, position)
         }
-        holder.binding.root.setOnClickListener {
+        holder.binding.taskCardView.setOnClickListener {
             onTaskClickListener?.onTaskClick(item, position)
         }
         holder.binding.deleteImageView.setOnClickListener {

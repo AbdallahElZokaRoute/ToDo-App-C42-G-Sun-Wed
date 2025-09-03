@@ -25,15 +25,14 @@ import com.route.todoappc42gsunwed.fragments.todosList.adapter.WeekDayHeaderView
 import com.route.todoappc42gsunwed.fragments.todosList.adapter.WeekDayViewHolder
 import java.time.LocalDate
 import java.time.YearMonth
-import java.time.ZoneId
 import java.time.format.TextStyle
-import java.util.Date
 import java.util.Locale
 
 class TodosListFragment : Fragment() {
     private lateinit var binding: FragmentTodosListBinding
     private lateinit var adapter: TasksAdapter
     private lateinit var tasksList: List<TaskDM>
+    var onTaskClickListener: OnTaskClickListener? = null
     private var selectedDate: LocalDate? = null
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -48,6 +47,7 @@ class TodosListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         adapter = TasksAdapter(mutableListOf())
         //  Github Library
+        adapter.onTaskClickListener = onTaskClickListener
         adapter.onCheckClickListener = object : OnTaskClickListener {
             override fun onTaskClick(
                 task: TaskDM,
