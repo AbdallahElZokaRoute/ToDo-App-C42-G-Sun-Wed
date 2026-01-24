@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">ToDo App C42 G Sun Wed</string>
-</resources>
+    <string name="to_do_list">To Do List</string>
+    <string name="mon">Mon</string>
+    <string name="_21">21</string>
+    <string name="title">Title</string>
+    <string name="_10_00_am">10:00 AM</string>
+    <string name="description">Description</string>
+    <string name="title1">Title</string>
+    <string name="addtask">addTask</string>
+    <string name="pick_time">Pick time</string>
+    <string name="descriptioninput">Description</string>
+    <string name="edittask">EditTask</string>
+    <string name="language">Language</string>
+    <string name="mode">Mode</string>
+    <string name="setting">Setting</string>
+
+    </resources>

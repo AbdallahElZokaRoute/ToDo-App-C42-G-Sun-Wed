@@ -1,0 +1,15 @@
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_list"
+        android:icon="@drawable/list_select"
+
+        tools:ignore="MenuTitle">
+        @color/colorPrimary
+</item>
+    <item
+        android:id="@+id/nav_settings"
+        android:icon="@drawable/setting_select"
+        tools:ignore="MenuTitle" />
+
+</menu>

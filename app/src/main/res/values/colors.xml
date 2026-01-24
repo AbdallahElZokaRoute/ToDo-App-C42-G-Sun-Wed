@@ -2,4 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="primary_color">#5D9CEC</color>
+    <color name="background">#DFECDB</color>
+    <color name="text_color">#363636</color>
+    <color name="spinner_color">#FFFFFFFF</color>
+    <color name="calnder_item">#FFFFFFFF</color>
+    <color name="text_calnder_item">#FF000000</color>
 </resources>
+

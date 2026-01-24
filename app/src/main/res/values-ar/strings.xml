@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="addtask">اضافة مهمة</string>
+    <string name="pick_time">اختار الوقت</string>
+    <string name="descriptioninput">الوصف</string>
+    <string name="edittask">تعديل مهمة</string>
+    <string name="language">اللغة</string>
+    <string name="mode">الوضع</string>
+    <string name="setting">الاعدادات</string>
+</resources>
